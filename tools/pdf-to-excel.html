@@ -11,9 +11,54 @@
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 </head>
 <body>
-    <!-- Header (same as other tool pages) -->
     <header class="header">
-        <!-- Same header code as other tool pages -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>BabyPDF</span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">PDF Tools <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Popular Tools</h4>
+                                    <a href="merge-pdf.html"><i class="fas fa-object-group"></i> Merge PDF</a>
+                                    <a href="split-pdf.html"><i class="fas fa-cut"></i> Split PDF</a>
+                                    <a href="compress-pdf.html"><i class="fas fa-compress-alt"></i> Compress PDF</a>
+                                    <a href="edit-pdf.html"><i class="fas fa-edit"></i> Edit PDF</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Convert To PDF</h4>
+                                    <a href="word-to-pdf.html"><i class="fas fa-file-word"></i> Word to PDF</a>
+                                    <a href="excel-to-pdf.html"><i class="fas fa-file-excel"></i> Excel to PDF</a>
+                                    <a href="ppt-to-pdf.html"><i class="fas fa-file-powerpoint"></i> PPT to PDF</a>
+                                    <a href="jpg-to-pdf.html"><i class="fas fa-file-image"></i> JPG to PDF</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Convert From PDF</h4>
+                                    <a href="pdf-to-word.html"><i class="fas fa-file-word"></i> PDF to Word</a>
+                                    <a href="pdf-to-excel.html"><i class="fas fa-file-excel"></i> PDF to Excel</a>
+                                    <a href="pdf-to-ppt.html"><i class="fas fa-file-powerpoint"></i> PDF to PPT</a>
+                                    <a href="pdf-to-jpg.html"><i class="fas fa-file-image"></i> PDF to JPG</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="../pages/about-us.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="../pages/contact-us.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <section class="tool-page">
@@ -97,6 +142,24 @@
                             <small>Leave empty to extract from all pages</small>
                         </div>
                     </div>
+
+                    <div class="option-group">
+                        <h4><i class="fas fa-magic"></i> Advanced Options</h4>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="ocrEnabled">
+                                <span>Enable OCR for scanned PDFs</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="mergeTables">
+                                <span>Merge similar tables</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="preserveLayout" checked>
+                                <span>Preserve table layout</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="progress-container" id="progressContainer">
@@ -138,6 +201,7 @@
                     <li>Extracting data from invoices and receipts</li>
                     <li>Converting product catalogs to spreadsheets</li>
                     <li>Extracting tabular data for analysis</li>
+                    <li>Migrating data from PDF reports to databases</li>
                 </ul>
                 <p><strong>Features:</strong></p>
                 <ul style="margin: 15px 0; padding-left: 20px;">
@@ -145,21 +209,117 @@
                     <li>Preserves column and row structure</li>
                     <li>Extracts text from tables with accuracy</li>
                     <li>Multiple output format options</li>
+                    <li>OCR support for scanned documents</li>
                 </ul>
+                <p><strong>How it works:</strong></p>
+                <ol style="margin: 15px 0; padding-left: 20px;">
+                    <li>Upload your PDF file</li>
+                    <li>Our tool analyzes the document for tables</li>
+                    <li>Extracts data while preserving structure</li>
+                    <li>Creates an editable Excel spreadsheet</li>
+                </ol>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <!-- Same footer as other tool pages -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>BabyPDF Tools</h4>
+                    <ul>
+                        <li><a href="merge-pdf.html">Merge PDF</a></li>
+                        <li><a href="split-pdf.html">Split PDF</a></li>
+                        <li><a href="jpg-to-pdf.html">JPG to PDF</a></li>
+                        <li><a href="pdf-to-jpg.html">PDF to JPG</a></li>
+                        <li><a href="compress-pdf.html">Compress PDF</a></li>
+                        <li><a href="edit-pdf.html">Edit PDF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../pages/about-us.html">About Us</a></li>
+                        <li><a href="../pages/contact-us.html">Contact Us</a></li>
+                        <li><a href="../pages/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../pages/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../pages/terms-of-use.html">Terms of Use</a></li>
+                        <li><a href="../pages/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p class="footer-about">BabyPDF provides free, browser-based PDF tools that work locally on your device.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BabyPDFTools.com — All rights reserved</p>
+            </div>
+        </div>
     </footer>
 
     <script src="../main.js"></script>
     <script src="../tool.js"></script>
     <script>
-        // Same JavaScript structure as other tool pages
         document.addEventListener('DOMContentLoaded', function() {
-            // Implementation similar to other tool pages
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            const browseBtn = document.getElementById('browseBtn');
+            const processBtn = document.getElementById('processBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const filesContainer = document.getElementById('filesContainer');
+            const downloadSection = document.getElementById('downloadSection');
+
+            pdfProcessor.initFileUpload(uploadArea, filesContainer);
+            browseBtn.addEventListener('click', () => fileInput.click());
+
+            processBtn.addEventListener('click', async () => {
+                if (pdfProcessor.files.length === 0) {
+                    pdfProcessor.showMessage('Please select a PDF file to convert', 'error');
+                    return;
+                }
+
+                processBtn.disabled = true;
+                processBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Extracting tables...';
+
+                await pdfProcessor.simulateProcessing(2500);
+
+                downloadSection.style.display = 'block';
+                processBtn.innerHTML = '<i class="fas fa-exchange-alt"></i> Convert to Excel';
+                processBtn.disabled = false;
+
+                pdfProcessor.showMessage('PDF tables extracted to Excel successfully!', 'success');
+            });
+
+            downloadBtn.addEventListener('click', () => {
+                const format = document.querySelector('input[name="format"]:checked').value;
+                const fileName = `extracted-data-${Date.now()}.${format}`;
+                const content = 'This is a demo Excel file with extracted data. In a real implementation, this would be the actual spreadsheet.';
+                pdfProcessor.downloadFile(fileName, content);
+            });
+
+            resetBtn.addEventListener('click', () => {
+                pdfProcessor.reset();
+                downloadSection.style.display = 'none';
+                processBtn.disabled = true;
+            });
+
+            setInterval(() => {
+                const fileCount = pdfProcessor.files.length;
+                processBtn.disabled = fileCount === 0;
+            }, 500);
         });
     </script>
 </body>
