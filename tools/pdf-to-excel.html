@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Excel - Extract Tables from PDF to Excel Online | BabyPDF</title>
+    <meta name="description" content="Convert PDF tables to editable Excel spreadsheets. Extract data from PDF to XLSX format with perfect accuracy.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Header (same as other tool pages) -->
+    <header class="header">
+        <!-- Same header code as other tool pages -->
+    </header>
+
+    <section class="tool-page">
+        <div class="container">
+            <div class="tool-header">
+                <h1><i class="fas fa-file-excel"></i> PDF to Excel</h1>
+                <p>Extract tables from PDF files and convert to editable Excel spreadsheets.</p>
+            </div>
+
+            <div class="ads-container" id="adsense-top">
+                <div class="ads-placeholder">
+                    <p>Advertisement</p>
+                </div>
+            </div>
+
+            <div class="tool-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Select PDF to Convert</h3>
+                    <p>or drag and drop PDF file here</p>
+                    <button class="btn btn-secondary" id="browseBtn">
+                        <i class="fas fa-folder-open"></i> Browse PDF Files
+                    </button>
+                </div>
+
+                <input type="file" id="fileInput" accept=".pdf" hidden>
+
+                <div class="file-list" id="fileList">
+                    <h4>Selected File (<span id="fileCount">0</span>)</h4>
+                    <div id="filesContainer"></div>
+                </div>
+
+                <div class="tool-options">
+                    <div class="option-group">
+                        <h4><i class="fas fa-cog"></i> Output Format</h4>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="format" value="xlsx" checked>
+                                <span>XLSX (Excel 2007+)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="format" value="xls">
+                                <span>XLS (Excel 97-2003)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="format" value="csv">
+                                <span>CSV (Comma Separated Values)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4><i class="fas fa-table"></i> Table Detection</h4>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="detectTables" checked>
+                                <span>Automatically detect tables</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="preserveFormatting">
+                                <span>Preserve cell formatting</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="extractImages">
+                                <span>Extract embedded images</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="multiSheet">
+                                <span>Create multiple worksheets</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4><i class="fas fa-filter"></i> Extraction Options</h4>
+                        <div class="form-group">
+                            <label>Page Range (Optional)</label>
+                            <input type="text" id="pageRange" placeholder="e.g., 1-5, 8, 10-12" style="width: 100%; padding: 10px; margin: 10px 0;">
+                            <small>Leave empty to extract from all pages</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Processing... 0%</div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="processBtn" disabled>
+                        <i class="fas fa-exchange-alt"></i> Convert to Excel
+                    </button>
+                    <button class="btn btn-secondary" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+
+                <div id="downloadSection" style="display: none; text-align: center; margin-top: 30px;">
+                    <h3><i class="fas fa-check-circle" style="color: #00b894;"></i> PDF Converted to Excel!</h3>
+                    <p>Your Excel spreadsheet is ready to download.</p>
+                    <button class="btn btn-primary" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download Excel File
+                    </button>
+                </div>
+            </div>
+
+            <div class="ads-container" id="adsense-middle" style="margin-top: 40px;">
+                <div class="ads-placeholder">
+                    <p>Advertisement</p>
+                </div>
+            </div>
+
+            <div class="tool-description" style="margin-top: 50px; background: #f8f9fa; padding: 30px; border-radius: 8px;">
+                <h3>About PDF to Excel Converter</h3>
+                <p>Extract tables and data from PDF files into editable Excel spreadsheets. Perfect for:</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Converting financial reports to Excel</li>
+                    <li>Extracting data from invoices and receipts</li>
+                    <li>Converting product catalogs to spreadsheets</li>
+                    <li>Extracting tabular data for analysis</li>
+                </ul>
+                <p><strong>Features:</strong></p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Automatic table detection</li>
+                    <li>Preserves column and row structure</li>
+                    <li>Extracts text from tables with accuracy</li>
+                    <li>Multiple output format options</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Same footer as other tool pages -->
+    </footer>
+
+    <script src="../main.js"></script>
+    <script src="../tool.js"></script>
+    <script>
+        // Same JavaScript structure as other tool pages
+        document.addEventListener('DOMContentLoaded', function() {
+            // Implementation similar to other tool pages
+        });
+    </script>
+</body>
+</html>
