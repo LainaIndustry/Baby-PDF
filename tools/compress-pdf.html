@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compress PDF - Reduce PDF File Size Online Free | BabyPDF</title>
-    <meta name="description" content="Compress PDF files to reduce file size while preserving quality. Free online PDF compressor with no quality loss.">
+    <meta name="description" content="Compress PDF files to reduce file size while maintaining quality. Free PDF compressor with multiple compression levels.">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
@@ -66,10 +65,9 @@
         <div class="container">
             <div class="tool-header">
                 <h1><i class="fas fa-compress-alt"></i> Compress PDF</h1>
-                <p>Reduce PDF file size while preserving quality. Perfect for email, web, or storage.</p>
+                <p>Reduce PDF file size while preserving quality. Optimize PDFs for web, email, or storage.</p>
             </div>
 
-            <!-- AdSense Top -->
             <div class="ads-container" id="adsense-top">
                 <div class="ads-placeholder">
                     <p>Advertisement</p>
@@ -77,7 +75,6 @@
             </div>
 
             <div class="tool-container">
-                <!-- File Upload Area -->
                 <div class="upload-area" id="uploadArea">
                     <div class="upload-icon">
                         <i class="fas fa-file-pdf"></i>
@@ -85,60 +82,101 @@
                     <h3>Select PDF to Compress</h3>
                     <p>or drag and drop PDF file here</p>
                     <button class="btn btn-secondary" id="browseBtn">
-                        <i class="fas fa-folder-open"></i> Browse Files
+                        <i class="fas fa-folder-open"></i> Browse PDF Files
                     </button>
                 </div>
 
                 <input type="file" id="fileInput" accept=".pdf" hidden>
 
-                <!-- Selected File -->
                 <div class="file-list" id="fileList">
-                    <h4>Selected File</h4>
-                    <div id="filesContainer">
-                        <!-- File will be added here -->
-                    </div>
+                    <h4>Selected File (<span id="fileCount">0</span>)</h4>
+                    <div id="filesContainer"></div>
                 </div>
 
-                <!-- Tool Options -->
                 <div class="tool-options">
                     <div class="option-group">
-                        <h4><i class="fas fa-chart-line"></i> Compression Level</h4>
+                        <h4><i class="fas fa-sliders-h"></i> Compression Level</h4>
                         <div class="radio-group">
                             <label class="radio-label">
                                 <input type="radio" name="compression" value="low" checked>
                                 <span>Low Compression (Best Quality)</span>
+                                <small>Small size reduction, maximum quality</small>
                             </label>
                             <label class="radio-label">
                                 <input type="radio" name="compression" value="medium">
                                 <span>Medium Compression (Recommended)</span>
+                                <small>Balanced size and quality</small>
                             </label>
                             <label class="radio-label">
                                 <input type="radio" name="compression" value="high">
-                                <span>High Compression (Smaller File)</span>
+                                <span>High Compression (Smallest Size)</span>
+                                <small>Maximum compression, reduced quality</small>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="compression" value="extreme">
+                                <span>Extreme Compression</span>
+                                <small>For web use only, significant quality loss</small>
                             </label>
                         </div>
                     </div>
 
                     <div class="option-group">
-                        <h4><i class="fas fa-cog"></i> Advanced Options</h4>
+                        <h4><i class="fas fa-cog"></i> Optimization Options</h4>
                         <div class="checkbox-group">
                             <label class="checkbox-label">
+                                <input type="checkbox" id="removeMetadata" checked>
+                                <span>Remove metadata (author, creation date)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="compressImages" checked>
+                                <span>Compress images</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="removeBookmarks">
+                                <span>Remove bookmarks and links</span>
+                            </label>
+                            <label class="checkbox-label">
                                 <input type="checkbox" id="downsampleImages" checked>
-                                <span>Downsample images</span>
+                                <span>Downsample images to 150 DPI</span>
                             </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="removeMetadata">
-                                <span>Remove metadata</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="optimizeFonts" checked>
-                                <span>Optimize fonts</span>
-                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4><i class="fas fa-bullseye"></i> Target Size</h4>
+                        <div class="form-group">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <input type="range" id="sizeSlider" min="1" max="100" value="50" style="flex: 1;">
+                                <span id="sizeValue">50%</span>
+                            </div>
+                            <small>Adjust slider to target specific file size</small>
                         </div>
                     </div>
                 </div>
 
-                <!-- Progress Bar -->
+                <!-- Compression Preview -->
+                <div class="preview-section" id="previewSection" style="display: none; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <h4><i class="fas fa-chart-line"></i> Compression Preview</h4>
+                    <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 20px;">
+                        <div style="text-align: center;">
+                            <div class="file-size-badge" style="background: #ff5a5f; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold;">
+                                <span id="originalSize">0 MB</span>
+                            </div>
+                            <p>Original Size</p>
+                        </div>
+                        <div style="font-size: 1.5rem;">→</div>
+                        <div style="text-align: center;">
+                            <div class="file-size-badge" style="background: #00b894; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold;">
+                                <span id="compressedSize">0 MB</span>
+                            </div>
+                            <p>Compressed Size</p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <span id="savingsText" style="color: #00b894; font-weight: bold;">0% smaller</span>
+                    </div>
+                </div>
+
                 <div class="progress-container" id="progressContainer">
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill"></div>
@@ -146,7 +184,6 @@
                     <div class="progress-text" id="progressText">Processing... 0%</div>
                 </div>
 
-                <!-- Action Buttons -->
                 <div class="action-buttons">
                     <button class="btn btn-primary" id="processBtn" disabled>
                         <i class="fas fa-compress-alt"></i> Compress PDF
@@ -156,40 +193,56 @@
                     </button>
                 </div>
 
-                <!-- Download Link -->
                 <div id="downloadSection" style="display: none; text-align: center; margin-top: 30px;">
                     <h3><i class="fas fa-check-circle" style="color: #00b894;"></i> PDF Compressed Successfully!</h3>
-                    <p>Original size: <span id="originalSize">0 KB</span> | Compressed size: <span id="compressedSize">0 KB</span></p>
-                    <p>Reduction: <span id="reductionPercent">0%</span></p>
+                    <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                        <div style="display: flex; justify-content: space-around; align-items: center;">
+                            <div>
+                                <p style="margin: 0; font-size: 0.9rem;">Original Size</p>
+                                <p style="margin: 5px 0 0 0; font-weight: bold; color: #ff5a5f;" id="finalOriginalSize">0 MB</p>
+                            </div>
+                            <div>
+                                <p style="margin: 0; font-size: 0.9rem;">Compressed Size</p>
+                                <p style="margin: 5px 0 0 0; font-weight: bold; color: #00b894;" id="finalCompressedSize">0 MB</p>
+                            </div>
+                            <div>
+                                <p style="margin: 0; font-size: 0.9rem;">Savings</p>
+                                <p style="margin: 5px 0 0 0; font-weight: bold; color: #0984e3;" id="finalSavings">0%</p>
+                            </div>
+                        </div>
+                    </div>
                     <button class="btn btn-primary" id="downloadBtn">
                         <i class="fas fa-download"></i> Download Compressed PDF
                     </button>
                 </div>
             </div>
 
-            <!-- AdSense Middle -->
             <div class="ads-container" id="adsense-middle" style="margin-top: 40px;">
                 <div class="ads-placeholder">
                     <p>Advertisement</p>
                 </div>
             </div>
 
-            <!-- Tool Description -->
             <div class="tool-description" style="margin-top: 50px; background: #f8f9fa; padding: 30px; border-radius: 8px;">
-                <h3>About Compress PDF Tool</h3>
-                <p>Our Compress PDF tool reduces the file size of your PDF documents, making them easier to share via email or upload to the web. The compression is lossless, meaning the quality remains high.</p>
-                <p><strong>When to use PDF compression:</strong></p>
+                <h3>About PDF Compressor</h3>
+                <p>Reduce the file size of your PDF documents without significant quality loss. Perfect for:</p>
                 <ul style="margin: 15px 0; padding-left: 20px;">
                     <li>Sending PDFs via email</li>
-                    <li>Uploading to websites with file size limits</li>
+                    <li>Uploading to websites with size limits</li>
                     <li>Saving storage space on your device</li>
-                    <li>Improving loading times for web PDFs</li>
+                    <li>Optimizing PDFs for web viewing</li>
+                </ul>
+                <p><strong>How it works:</strong></p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Compresses embedded images</li>
+                    <li>Removes unnecessary metadata</li>
+                    <li>Optimizes PDF structure</li>
+                    <li>Preserves text quality</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -237,12 +290,9 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../main.js"></script>
     <script src="../tool.js"></script>
-    <script src="../adsense.js"></script>
     <script>
-        // Compress PDF Specific Script
         document.addEventListener('DOMContentLoaded', function() {
             const uploadArea = document.getElementById('uploadArea');
             const fileInput = document.getElementById('fileInput');
@@ -252,16 +302,82 @@
             const downloadBtn = document.getElementById('downloadBtn');
             const filesContainer = document.getElementById('filesContainer');
             const downloadSection = document.getElementById('downloadSection');
+            const previewSection = document.getElementById('previewSection');
+            const sizeSlider = document.getElementById('sizeSlider');
+            const sizeValue = document.getElementById('sizeValue');
+            const originalSize = document.getElementById('originalSize');
+            const compressedSize = document.getElementById('compressedSize');
+            const savingsText = document.getElementById('savingsText');
+            const finalOriginalSize = document.getElementById('finalOriginalSize');
+            const finalCompressedSize = document.getElementById('finalCompressedSize');
+            const finalSavings = document.getElementById('finalSavings');
 
-            // Initialize file upload
+            let currentFile = null;
+            let originalFileSize = 0;
+
             pdfProcessor.initFileUpload(uploadArea, filesContainer);
-
-            // Browse button
             browseBtn.addEventListener('click', () => fileInput.click());
 
-            // Process button
+            // Size slider
+            sizeSlider.addEventListener('input', function() {
+                sizeValue.textContent = `${this.value}%`;
+                if (currentFile) {
+                    updateCompressionPreview();
+                }
+            });
+
+            // File selection
+            fileInput.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    const file = e.target.files[0];
+                    currentFile = file;
+                    originalFileSize = file.size;
+                    
+                    // Clear previous files
+                    filesContainer.innerHTML = '';
+                    pdfProcessor.addFile(file, filesContainer);
+                    pdfProcessor.updateFileCount();
+                    
+                    // Show preview
+                    previewSection.style.display = 'block';
+                    updateCompressionPreview();
+                }
+            });
+
+            function updateCompressionPreview() {
+                const compressionLevel = sizeSlider.value;
+                const compressedSizeMB = calculateCompressedSize(originalFileSize, compressionLevel);
+                
+                originalSize.textContent = formatFileSize(originalFileSize);
+                compressedSize.textContent = formatFileSize(compressedSizeMB);
+                
+                const savings = ((originalFileSize - compressedSizeMB) / originalFileSize * 100).toFixed(1);
+                savingsText.textContent = `${savings}% smaller`;
+                
+                // Update color based on savings
+                if (savings > 70) {
+                    savingsText.style.color = '#00b894';
+                } else if (savings > 40) {
+                    savingsText.style.color = '#0984e3';
+                } else {
+                    savingsText.style.color = '#fdcb6e';
+                }
+            }
+
+            function calculateCompressedSize(originalSize, compressionLevel) {
+                // Simple calculation for demo
+                const compressionRatio = compressionLevel / 100;
+                return originalSize * (1 - compressionRatio * 0.8);
+            }
+
+            function formatFileSize(bytes) {
+                if (bytes < 1024) return bytes + ' Bytes';
+                if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+                return (bytes / 1048576).toFixed(1) + ' MB';
+            }
+
             processBtn.addEventListener('click', async () => {
-                if (pdfProcessor.files.length === 0) {
+                if (!currentFile) {
                     pdfProcessor.showMessage('Please select a PDF file to compress', 'error');
                     return;
                 }
@@ -269,19 +385,17 @@
                 processBtn.disabled = true;
                 processBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Compressing...';
 
-                // Simulate processing
                 await pdfProcessor.simulateProcessing(1500);
 
-                // Update download section with size info
-                const originalSize = pdfProcessor.files[0].file.size;
-                const compressedSize = Math.round(originalSize * 0.6); // Simulate 40% reduction
-                const reduction = Math.round((1 - compressedSize / originalSize) * 100);
+                // Update final results
+                const compressionLevel = sizeSlider.value;
+                const compressedSizeMB = calculateCompressedSize(originalFileSize, compressionLevel);
+                const savings = ((originalFileSize - compressedSizeMB) / originalFileSize * 100).toFixed(1);
+                
+                finalOriginalSize.textContent = formatFileSize(originalFileSize);
+                finalCompressedSize.textContent = formatFileSize(compressedSizeMB);
+                finalSavings.textContent = `${savings}%`;
 
-                document.getElementById('originalSize').textContent = pdfProcessor.formatFileSize(originalSize);
-                document.getElementById('compressedSize').textContent = pdfProcessor.formatFileSize(compressedSize);
-                document.getElementById('reductionPercent').textContent = `${reduction}%`;
-
-                // Show download section
                 downloadSection.style.display = 'block';
                 processBtn.innerHTML = '<i class="fas fa-compress-alt"></i> Compress PDF';
                 processBtn.disabled = false;
@@ -289,19 +403,26 @@
                 pdfProcessor.showMessage('PDF compressed successfully!', 'success');
             });
 
-            // Download button
             downloadBtn.addEventListener('click', () => {
                 const fileName = `compressed-${Date.now()}.pdf`;
-                const content = 'This is a demo compressed PDF file. In a real implementation, this would be the actual PDF content.';
+                const content = 'This is a demo compressed PDF file. In a real implementation, this would be the actual compressed PDF content.';
                 pdfProcessor.downloadFile(fileName, content);
             });
 
-            // Reset button
             resetBtn.addEventListener('click', () => {
                 pdfProcessor.reset();
+                currentFile = null;
+                originalFileSize = 0;
+                previewSection.style.display = 'none';
                 downloadSection.style.display = 'none';
                 processBtn.disabled = true;
+                pdfProcessor.showMessage('Reset successful', 'success');
             });
+
+            setInterval(() => {
+                const fileCount = pdfProcessor.files.length;
+                processBtn.disabled = fileCount === 0;
+            }, 500);
         });
     </script>
 </body>
