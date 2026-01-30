@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split PDF - Split PDF Pages Online Free | BabyPDF</title>
+    <meta name="description" content="Split PDF files into multiple documents. Extract specific pages or split by page ranges. 100% free browser-based tool.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Same Header Structure -->
+    <header class="header">
+        <!-- Same header code as merge-pdf.html -->
+    </header>
+
+    <section class="tool-page">
+        <div class="container">
+            <div class="tool-header">
+                <h1><i class="fas fa-cut"></i> Split PDF</h1>
+                <p>Split PDF files into multiple documents. Extract specific pages or split by page ranges.</p>
+            </div>
+
+            <!-- Same ad containers -->
+
+            <div class="tool-container">
+                <!-- File Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Select PDF to Split</h3>
+                    <p>or drag and drop PDF file here</p>
+                    <button class="btn btn-secondary" id="browseBtn">
+                        <i class="fas fa-folder-open"></i> Select PDF File
+                    </button>
+                </div>
+
+                <!-- Tool Options for Split -->
+                <div class="tool-options">
+                    <div class="option-group">
+                        <h4><i class="fas fa-cut"></i> Split Method</h4>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="splitMethod" value="range" checked>
+                                <span>Split by page range (e.g., 1-3, 4-5)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="splitMethod" value="every">
+                                <span>Split every N pages</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="splitMethod" value="single">
+                                <span>Extract single pages</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4><i class="fas fa-sliders-h"></i> Split Options</h4>
+                        <div class="form-group">
+                            <label for="pageRange">Page Range (e.g., 1-3, 5, 7-10)</label>
+                            <input type="text" id="pageRange" placeholder="1-5, 8, 10-12" style="width: 100%; padding: 10px; margin-top: 10px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Same progress and action buttons -->
+            </div>
+
+            <!-- Same footer -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Same footer code -->
+    </footer>
+
+    <script src="../main.js"></script>
+    <script src="../tool.js"></script>
+</body>
+</html>
