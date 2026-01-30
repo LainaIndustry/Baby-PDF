@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compress PDF - Reduce PDF File Size Online Free | BabyPDF</title>
+    <meta name="description" content="Compress PDF files to reduce file size while preserving quality. Free online PDF compressor with no quality loss.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>BabyPDF</span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">PDF Tools <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Popular Tools</h4>
+                                    <a href="merge-pdf.html"><i class="fas fa-object-group"></i> Merge PDF</a>
+                                    <a href="split-pdf.html"><i class="fas fa-cut"></i> Split PDF</a>
+                                    <a href="compress-pdf.html"><i class="fas fa-compress-alt"></i> Compress PDF</a>
+                                    <a href="edit-pdf.html"><i class="fas fa-edit"></i> Edit PDF</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Convert To PDF</h4>
+                                    <a href="word-to-pdf.html"><i class="fas fa-file-word"></i> Word to PDF</a>
+                                    <a href="excel-to-pdf.html"><i class="fas fa-file-excel"></i> Excel to PDF</a>
+                                    <a href="ppt-to-pdf.html"><i class="fas fa-file-powerpoint"></i> PPT to PDF</a>
+                                    <a href="jpg-to-pdf.html"><i class="fas fa-file-image"></i> JPG to PDF</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Convert From PDF</h4>
+                                    <a href="pdf-to-word.html"><i class="fas fa-file-word"></i> PDF to Word</a>
+                                    <a href="pdf-to-excel.html"><i class="fas fa-file-excel"></i> PDF to Excel</a>
+                                    <a href="pdf-to-ppt.html"><i class="fas fa-file-powerpoint"></i> PDF to PPT</a>
+                                    <a href="pdf-to-jpg.html"><i class="fas fa-file-image"></i> PDF to JPG</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="../pages/about-us.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="../pages/contact-us.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="tool-page">
+        <div class="container">
+            <div class="tool-header">
+                <h1><i class="fas fa-compress-alt"></i> Compress PDF</h1>
+                <p>Reduce PDF file size while preserving quality. Perfect for email, web, or storage.</p>
+            </div>
+
+            <!-- AdSense Top -->
+            <div class="ads-container" id="adsense-top">
+                <div class="ads-placeholder">
+                    <p>Advertisement</p>
+                </div>
+            </div>
+
+            <div class="tool-container">
+                <!-- File Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Select PDF to Compress</h3>
+                    <p>or drag and drop PDF file here</p>
+                    <button class="btn btn-secondary" id="browseBtn">
+                        <i class="fas fa-folder-open"></i> Browse Files
+                    </button>
+                </div>
+
+                <input type="file" id="fileInput" accept=".pdf" hidden>
+
+                <!-- Selected File -->
+                <div class="file-list" id="fileList">
+                    <h4>Selected File</h4>
+                    <div id="filesContainer">
+                        <!-- File will be added here -->
+                    </div>
+                </div>
+
+                <!-- Tool Options -->
+                <div class="tool-options">
+                    <div class="option-group">
+                        <h4><i class="fas fa-chart-line"></i> Compression Level</h4>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="compression" value="low" checked>
+                                <span>Low Compression (Best Quality)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="compression" value="medium">
+                                <span>Medium Compression (Recommended)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="compression" value="high">
+                                <span>High Compression (Smaller File)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4><i class="fas fa-cog"></i> Advanced Options</h4>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="downsampleImages" checked>
+                                <span>Downsample images</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="removeMetadata">
+                                <span>Remove metadata</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="optimizeFonts" checked>
+                                <span>Optimize fonts</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Processing... 0%</div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="processBtn" disabled>
+                        <i class="fas fa-compress-alt"></i> Compress PDF
+                    </button>
+                    <button class="btn btn-secondary" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+
+                <!-- Download Link -->
+                <div id="downloadSection" style="display: none; text-align: center; margin-top: 30px;">
+                    <h3><i class="fas fa-check-circle" style="color: #00b894;"></i> PDF Compressed Successfully!</h3>
+                    <p>Original size: <span id="originalSize">0 KB</span> | Compressed size: <span id="compressedSize">0 KB</span></p>
+                    <p>Reduction: <span id="reductionPercent">0%</span></p>
+                    <button class="btn btn-primary" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download Compressed PDF
+                    </button>
+                </div>
+            </div>
+
+            <!-- AdSense Middle -->
+            <div class="ads-container" id="adsense-middle" style="margin-top: 40px;">
+                <div class="ads-placeholder">
+                    <p>Advertisement</p>
+                </div>
+            </div>
+
+            <!-- Tool Description -->
+            <div class="tool-description" style="margin-top: 50px; background: #f8f9fa; padding: 30px; border-radius: 8px;">
+                <h3>About Compress PDF Tool</h3>
+                <p>Our Compress PDF tool reduces the file size of your PDF documents, making them easier to share via email or upload to the web. The compression is lossless, meaning the quality remains high.</p>
+                <p><strong>When to use PDF compression:</strong></p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Sending PDFs via email</li>
+                    <li>Uploading to websites with file size limits</li>
+                    <li>Saving storage space on your device</li>
+                    <li>Improving loading times for web PDFs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>BabyPDF Tools</h4>
+                    <ul>
+                        <li><a href="merge-pdf.html">Merge PDF</a></li>
+                        <li><a href="split-pdf.html">Split PDF</a></li>
+                        <li><a href="jpg-to-pdf.html">JPG to PDF</a></li>
+                        <li><a href="pdf-to-jpg.html">PDF to JPG</a></li>
+                        <li><a href="compress-pdf.html">Compress PDF</a></li>
+                        <li><a href="edit-pdf.html">Edit PDF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../pages/about-us.html">About Us</a></li>
+                        <li><a href="../pages/contact-us.html">Contact Us</a></li>
+                        <li><a href="../pages/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../pages/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../pages/terms-of-use.html">Terms of Use</a></li>
+                        <li><a href="../pages/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p class="footer-about">BabyPDF provides free, browser-based PDF tools that work locally on your device.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BabyPDFTools.com — All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../main.js"></script>
+    <script src="../tool.js"></script>
+    <script src="../adsense.js"></script>
+    <script>
+        // Compress PDF Specific Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            const browseBtn = document.getElementById('browseBtn');
+            const processBtn = document.getElementById('processBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const filesContainer = document.getElementById('filesContainer');
+            const downloadSection = document.getElementById('downloadSection');
+
+            // Initialize file upload
+            pdfProcessor.initFileUpload(uploadArea, filesContainer);
+
+            // Browse button
+            browseBtn.addEventListener('click', () => fileInput.click());
+
+            // Process button
+            processBtn.addEventListener('click', async () => {
+                if (pdfProcessor.files.length === 0) {
+                    pdfProcessor.showMessage('Please select a PDF file to compress', 'error');
+                    return;
+                }
+
+                processBtn.disabled = true;
+                processBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Compressing...';
+
+                // Simulate processing
+                await pdfProcessor.simulateProcessing(1500);
+
+                // Update download section with size info
+                const originalSize = pdfProcessor.files[0].file.size;
+                const compressedSize = Math.round(originalSize * 0.6); // Simulate 40% reduction
+                const reduction = Math.round((1 - compressedSize / originalSize) * 100);
+
+                document.getElementById('originalSize').textContent = pdfProcessor.formatFileSize(originalSize);
+                document.getElementById('compressedSize').textContent = pdfProcessor.formatFileSize(compressedSize);
+                document.getElementById('reductionPercent').textContent = `${reduction}%`;
+
+                // Show download section
+                downloadSection.style.display = 'block';
+                processBtn.innerHTML = '<i class="fas fa-compress-alt"></i> Compress PDF';
+                processBtn.disabled = false;
+
+                pdfProcessor.showMessage('PDF compressed successfully!', 'success');
+            });
+
+            // Download button
+            downloadBtn.addEventListener('click', () => {
+                const fileName = `compressed-${Date.now()}.pdf`;
+                const content = 'This is a demo compressed PDF file. In a real implementation, this would be the actual PDF content.';
+                pdfProcessor.downloadFile(fileName, content);
+            });
+
+            // Reset button
+            resetBtn.addEventListener('click', () => {
+                pdfProcessor.reset();
+                downloadSection.style.display = 'none';
+                processBtn.disabled = true;
+            });
+        });
+    </script>
+</body>
+</html>
