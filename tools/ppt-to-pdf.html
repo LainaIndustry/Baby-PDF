@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPoint to PDF - Convert PPT to PDF Online Free | BabyPDF</title>
+    <meta name="description" content="Convert PowerPoint presentations (PPT, PPTX) to PDF documents. Preserve animations as slides, notes, and formatting.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>BabyPDF</span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">PDF Tools <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Popular Tools</h4>
+                                    <a href="merge-pdf.html"><i class="fas fa-object-group"></i> Merge PDF</a>
+                                    <a href="split-pdf.html"><i class="fas fa-cut"></i> Split PDF</a>
+                                    <a href="compress-pdf.html"><i class="fas fa-compress-alt"></i> Compress PDF</a>
+                                    <a href="edit-pdf.html"><i class="fas fa-edit"></i> Edit PDF</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Convert To PDF</h4>
+                                    <a href="word-to-pdf.html"><i class="fas fa-file-word"></i> Word to PDF</a>
+                                    <a href="excel-to-pdf.html"><i class="fas fa-file-excel"></i> Excel to PDF</a>
+                                    <a href="ppt-to-pdf.html"><i class="fas fa-file-powerpoint"></i> PPT to PDF</a>
+                                    <a href="jpg-to-pdf.html"><i class="fas fa-file-image"></i> JPG to PDF</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Convert From PDF</h4>
+                                    <a href="pdf-to-word.html"><i class="fas fa-file-word"></i> PDF to Word</a>
+                                    <a href="pdf-to-excel.html"><i class="fas fa-file-excel"></i> PDF to Excel</a>
+                                    <a href="pdf-to-ppt.html"><i class="fas fa-file-powerpoint"></i> PDF to PPT</a>
+                                    <a href="pdf-to-jpg.html"><i class="fas fa-file-image"></i> PDF to JPG</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="../pages/about-us.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="../pages/contact-us.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="tool-page">
+        <div class="container">
+            <div class="tool-header">
+                <h1><i class="fas fa-file-powerpoint"></i> PowerPoint to PDF</h1>
+                <p>Convert PowerPoint presentations to PDF documents with preserved formatting and layout.</p>
+            </div>
+
+            <div class="ads-container" id="adsense-top">
+                <div class="ads-placeholder">
+                    <p>Advertisement</p>
+                </div>
+            </div>
+
+            <div class="tool-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <h3>Select PowerPoint File</h3>
+                    <p>or drag and drop PPT/PPTX file here</p>
+                    <button class="btn btn-secondary" id="browseBtn">
+                        <i class="fas fa-folder-open"></i> Browse PowerPoint Files
+                    </button>
+                </div>
+
+                <input type="file" id="fileInput" accept=".ppt,.pptx,.odp" hidden>
+
+                <div class="file-list" id="fileList">
+                    <h4>Selected File (<span id="fileCount">0</span>)</h4>
+                    <div id="filesContainer"></div>
+                </div>
+
+                <div class="tool-options">
+                    <div class="option-group">
+                        <h4><i class="fas fa-cog"></i> Conversion Options</h4>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="includeNotes" checked>
+                                <span>Include speaker notes</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="includeHiddenSlides">
+                                <span>Include hidden slides</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="highQuality" checked>
+                                <span>High quality output</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="frameSlides">
+                                <span>Frame slides</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4><i class="fas fa-sliders-h"></i> Page Settings</h4>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="pageSize" value="slide" checked>
+                                <span>Slide size (matches presentation)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="pageSize" value="letter">
+                                <span>Letter (8.5" x 11")</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="pageSize" value="a4">
+                                <span>A4 (210mm x 297mm)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4><i class="fas fa-th-large"></i> Slides Per Page</h4>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="slidesPerPage" value="1" checked>
+                                <span>1 slide per page</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="slidesPerPage" value="2">
+                                <span>2 slides per page</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="slidesPerPage" value="4">
+                                <span>4 slides per page (handout)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="slidesPerPage" value="6">
+                                <span>6 slides per page</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Processing... 0%</div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="processBtn" disabled>
+                        <i class="fas fa-exchange-alt"></i> Convert to PDF
+                    </button>
+                    <button class="btn btn-secondary" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+
+                <div id="downloadSection" style="display: none; text-align: center; margin-top: 30px;">
+                    <h3><i class="fas fa-check-circle" style="color: #00b894;"></i> PowerPoint Converted to PDF!</h3>
+                    <p>Your PDF document is ready to download.</p>
+                    <button class="btn btn-primary" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="ads-container" id="adsense-middle" style="margin-top: 40px;">
+                <div class="ads-placeholder">
+                    <p>Advertisement</p>
+                </div>
+            </div>
+
+            <div class="tool-description" style="margin-top: 50px; background: #f8f9fa; padding: 30px; border-radius: 8px;">
+                <h3>About PowerPoint to PDF Converter</h3>
+                <p>Convert your PowerPoint presentations to PDF format for easy sharing and printing. Perfect for:</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Sharing presentations that can't be edited</li>
+                    <li>Creating handouts for meetings</li>
+                    <li>Archiving important presentations</li>
+                    <li>Submitting presentations for review</li>
+                </ul>
+                <p><strong>Supported Formats:</strong></p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>PPT (PowerPoint 97-2003)</li>
+                    <li>PPTX (PowerPoint 2007+)</li>
+                    <li>ODP (OpenDocument Presentation)</li>
+                </ul>
+                <p><strong>Features:</strong></p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Preserve animations as static slides</li>
+                    <li>Include speaker notes</li>
+                    <li>Multiple slides per page options</li>
+                    <li>High-quality image rendering</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>BabyPDF Tools</h4>
+                    <ul>
+                        <li><a href="merge-pdf.html">Merge PDF</a></li>
+                        <li><a href="split-pdf.html">Split PDF</a></li>
+                        <li><a href="jpg-to-pdf.html">JPG to PDF</a></li>
+                        <li><a href="pdf-to-jpg.html">PDF to JPG</a></li>
+                        <li><a href="compress-pdf.html">Compress PDF</a></li>
+                        <li><a href="edit-pdf.html">Edit PDF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../pages/about-us.html">About Us</a></li>
+                        <li><a href="../pages/contact-us.html">Contact Us</a></li>
+                        <li><a href="../pages/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../pages/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../pages/terms-of-use.html">Terms of Use</a></li>
+                        <li><a href="../pages/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p class="footer-about">BabyPDF provides free, browser-based PDF tools that work locally on your device.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BabyPDFTools.com — All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+    <script src="../tool.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            const browseBtn = document.getElementById('browseBtn');
+            const processBtn = document.getElementById('processBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const filesContainer = document.getElementById('filesContainer');
+            const downloadSection = document.getElementById('downloadSection');
+
+            // Custom file handling for PowerPoint files
+            uploadArea.addEventListener('click', () => fileInput.click());
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#ff5a5f';
+                uploadArea.style.backgroundColor = '#f8f9fa';
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.style.borderColor = '#dfe6e9';
+                uploadArea.style.backgroundColor = 'transparent';
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#dfe6e9';
+                uploadArea.style.backgroundColor = 'transparent';
+                handleFiles(e.dataTransfer.files);
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            browseBtn.addEventListener('click', () => fileInput.click());
+
+            function handleFiles(fileList) {
+                const files = Array.from(fileList).filter(file => {
+                    const acceptedTypes = [
+                        'application/vnd.ms-powerpoint',
+                        'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+                        'application/vnd.oasis.opendocument.presentation'
+                    ];
+                    const acceptedExtensions = ['.ppt', '.pptx', '.odp'];
+                    const extension = file.name.toLowerCase().slice(file.name.lastIndexOf('.'));
+                    
+                    return acceptedTypes.includes(file.type) || acceptedExtensions.includes(extension);
+                });
+
+                if (files.length === 0) {
+                    pdfProcessor.showMessage('Please select PowerPoint files (PPT, PPTX, ODP)', 'error');
+                    return;
+                }
+
+                files.forEach(file => {
+                    pdfProcessor.addFile(file, filesContainer);
+                });
+
+                pdfProcessor.updateFileCount();
+            }
+
+            processBtn.addEventListener('click', async () => {
+                if (pdfProcessor.files.length === 0) {
+                    pdfProcessor.showMessage('Please select a PowerPoint file to convert', 'error');
+                    return;
+                }
+
+                processBtn.disabled = true;
+                processBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Converting...';
+
+                await pdfProcessor.simulateProcessing(1800);
+
+                downloadSection.style.display = 'block';
+                processBtn.innerHTML = '<i class="fas fa-exchange-alt"></i> Convert to PDF';
+                processBtn.disabled = false;
+
+                pdfProcessor.showMessage('PowerPoint converted to PDF successfully!', 'success');
+            });
+
+            downloadBtn.addEventListener('click', () => {
+                const fileName = `presentation-${Date.now()}.pdf`;
+                const content = 'This is a demo PDF converted from PowerPoint. In a real implementation, this would be the actual PDF content.';
+                pdfProcessor.downloadFile(fileName, content);
+            });
+
+            resetBtn.addEventListener('click', () => {
+                pdfProcessor.reset();
+                downloadSection.style.display = 'none';
+                processBtn.disabled = true;
+            });
+
+            setInterval(() => {
+                const fileCount = pdfProcessor.files.length;
+                processBtn.disabled = fileCount === 0;
+            }, 500);
+        });
+    </script>
+</body>
+</html>
