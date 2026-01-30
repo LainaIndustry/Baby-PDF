@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - BabyPDF Support</title>
-    <meta name="description" content="Contact BabyPDF support for questions, feedback, or partnership inquiries.">
+    <title>Contact Us - BabyPDF Support & Feedback</title>
+    <meta name="description" content="Contact BabyPDF support team. Get help, provide feedback, or report issues with our PDF tools.">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
@@ -64,46 +64,90 @@
     <section class="tool-page">
         <div class="container">
             <div class="tool-header">
-                <h1>Contact BabyPDF</h1>
-                <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                <h1>Contact Us</h1>
+                <p>Get in touch with the BabyPDF team. We're here to help!</p>
             </div>
 
             <div class="tool-container">
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px;">
+                    <div>
+                        <h3><i class="fas fa-envelope"></i> Contact Information</h3>
+                        <div class="contact-info" style="margin-top: 20px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <i class="fas fa-envelope" style="color: #ff5a5f; margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>support@babypdftools.com</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <i class="fas fa-clock" style="color: #0984e3; margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Response Time</strong>
+                                    <p>24-48 hours (Monday - Friday)</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <i class="fas fa-globe" style="color: #00b894; margin-right: 10px;"></i>
+                                <div>
+                                    <strong>Website Issues</strong>
+                                    <p>report@babypdftools.com</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Enter subject">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Enter your message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                </div>
 
-                <div class="contact-info" style="margin-top: 40px;">
-                    <h3>Other Ways to Reach Us</h3>
-                    <p><strong>Email:</strong> support@babypdftools.com</p>
-                    <p><strong>Feedback:</strong> We value your feedback to improve our tools. Please let us know if you have any suggestions.</p>
-                    <p><strong>Note:</strong> BabyPDF is a free service and we do not provide phone support. Please allow 24-48 hours for email responses.</p>
+                        <h3 style="margin-top: 30px;"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+                        <div class="faq" style="margin-top: 20px;">
+                            <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                                <strong>Q: Are your tools really free?</strong>
+                                <p style="margin-top: 5px;">A: Yes! All BabyPDF tools are 100% free with no hidden charges.</p>
+                            </div>
+                            <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                                <strong>Q: Where are my files processed?</strong>
+                                <p style="margin-top: 5px;">A: All processing happens locally in your browser. Files never leave your device.</p>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <strong>Q: Can I use BabyPDF on mobile?</strong>
+                                <p style="margin-top: 5px;">A: Yes! Our tools work on all modern browsers including mobile devices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3><i class="fas fa-paper-plane"></i> Send us a Message</h3>
+                        <form id="contactForm" style="margin-top: 20px;">
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Your Name</label>
+                                <input type="text" id="name" style="width: 100%; padding: 12px; border: 1px solid #dfe6e9; border-radius: 4px;" required>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Email Address</label>
+                                <input type="email" id="email" style="width: 100%; padding: 12px; border: 1px solid #dfe6e9; border-radius: 4px;" required>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Subject</label>
+                                <select id="subject" style="width: 100%; padding: 12px; border: 1px solid #dfe6e9; border-radius: 4px;">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="feedback">Feedback & Suggestions</option>
+                                    <option value="bug">Report a Bug</option>
+                                    <option value="business">Business Inquiry</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Message</label>
+                                <textarea id="message" rows="6" style="width: 100%; padding: 12px; border: 1px solid #dfe6e9; border-radius: 4px;" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -153,10 +197,33 @@
 
     <script src="../main.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // In a real implementation, this would send to a server
+                // For demo, just show a success message
+                
+                const messageDiv = document.createElement('div');
+                messageDiv.innerHTML = `
+                    <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-top: 20px; text-align: center;">
+                        <i class="fas fa-check-circle"></i> Thank you for your message! We'll get back to you soon.
+                    </div>
+                `;
+                
+                contactForm.parentNode.insertBefore(messageDiv, contactForm.nextSibling);
+                contactForm.reset();
+                
+                // Scroll to message
+                messageDiv.scrollIntoView({ behavior: 'smooth' });
+            });
         });
     </script>
 </body>
